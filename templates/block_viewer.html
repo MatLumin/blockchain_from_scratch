@@ -1,0 +1,40 @@
+<style>
+
+*
+	{
+	color : black;
+	font-family: monospace;
+	}
+
+
+.block_div
+	{
+	border-style:solid;
+	border-radius: 20px;	
+	border-radius: 15prex;
+	width: fit-content;
+	height: fit-content;
+	margin-bottom: 20px;
+	padding:10px;
+	}
+
+.block_div > *
+	{
+
+	background-color: transparent;
+	}
+
+</style>
+
+{% for block in chain %}
+	<div class="block_div">
+		<pre>
+block_number:{{block.block_number}}
+timestamp:{{block.timestamp}}
+data:
+	<pre>{{fit_text(block.data)}}</pre>
+nonce:{{block.nonce}}
+prerev_hash:{{block.prev_hash}}
+		</pre>
+	</div>
+{% endfor %}
